@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>111</title>
+   <!-- <meta property="fb:app_id" content="126078171292770" />
+    <meta property="og:site_name" content="Facebook for Developers" />
+    <meta property="og:title" content="Etekcity product weight" />
+    <meta name="description" content="123141414" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://static.gongminghua.site/case/facebook-demo" />
+    <meta property="og:image" content="http://static.gongminghua.site/case/facebook-demo/test.jpg" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:site:id" content="63359297" />
+    <meta name="twitter:card" content="summary" />-->
+</head>
+<body>
+<div id="fb-root"></div>
+<button type="button" style="height:50px;padding:0 10px;" id="share">Share to facebook</button>
+<script>(function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'))</script>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '126078171292770',
+            xfbml      : true,
+            version    : 'v2.9'
+        });
+		document.getElementById("share").addEventListener("click",function(){
+			/*FB.ui({
+				method: 'share',
+				mobile_iframe: true,
+				href: 'http://static.gongminghua.site/case/facebook-demo'
+			}, function(response){
+				if (response && !response.error_message) {
+					console.log('Posting completed.');
+				} else {
+					console.log('Error while posting.');
+				}
+			});*/
+
+            FB.ui({
+                    method: 'feed',
+                    name: 'Facebook for Developers',
+                    link: ' http://static.gongminghua.site/case/facebook-demo',
+                    picture: 'http://static.gongminghua.site/case/facebook-demo/test.jpg',
+                    caption: 'Caption Best',
+                    description: 'Desc',
+                    message: '',
+                    display: 'dialog'
+            });
+		},false);
+    };
+	
+
+
+</script>
+<!-- Your share button code -->
+<!--
+<div class="fb-share-button"
+     data-href="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html"
+     data-layout="button_count">
+</div>
+-->
+</body>
+</html>
